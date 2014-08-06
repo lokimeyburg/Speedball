@@ -1,8 +1,8 @@
-// Bifrost is a tiny subset of jQuery
+// Speedball is a tiny subset of jQuery
 // ---------------------------------------
 // Credit: basically taken right from http://www.idangero.us/framework7
 
-var Bifrost = function (arr) {
+var Speedball = function (arr) {
   var _this = this,
     i = 0;
   // Create array-like object
@@ -512,4 +512,4 @@ $.trim = function (str) {
 $.supportTouch = (function () {
   return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
 })();
-$.fn = Bifrost.prototype;
+$.fn = Speedball.prototype;
