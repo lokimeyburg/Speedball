@@ -13,7 +13,7 @@ var Speedball = function (arr) {
   // Return collection with methods
   return this;
 };
-Bifrost.prototype = {
+Speedball.prototype = {
   // Classes and attriutes
   addClass: function (className) {
     var classes = className.split(' ');
@@ -316,14 +316,14 @@ Bifrost.prototype = {
     var length = this.length;
     var returnIndex;
     if (index > length - 1) {
-      return new Bifrost([]);
+      return new Speedball([]);
     }
     if (index < 0) {
       returnIndex = length + index;
-      if (returnIndex < 0) return new Bifrost([]);
-      else return new Bifrost([this[returnIndex]]);
+      if (returnIndex < 0) return new Speedball([]);
+      else return new Speedball([this[returnIndex]]);
     }
-    return new Bifrost([this[index]]);
+    return new Speedball([this[index]]);
   },
   append: function (newChild) {
     for (var i = 0; i < this.length; i++) {
@@ -367,15 +367,15 @@ Bifrost.prototype = {
   },
   next: function () {
     if (this.length > 0) {
-      if (this[0].nextElementSibling) return new Bifrost([this[0].nextElementSibling]);
-      else return new Bifrost([]);
-    } else return new Bifrost([]);
+      if (this[0].nextElementSibling) return new Speedball([this[0].nextElementSibling]);
+      else return new Speedball([]);
+    } else return new Speedball([]);
   },
   prev: function () {
     if (this.length > 0) {
-      if (this[0].previousElementSibling) return new Bifrost([this[0].previousElementSibling]);
-      else return new Bifrost([]);
-    } else return new Bifrost([]);
+      if (this[0].previousElementSibling) return new Speedball([this[0].previousElementSibling]);
+      else return new Speedball([]);
+    } else return new Speedball([]);
   },
   parent: function (selector) {
     var parents = [];
@@ -411,7 +411,7 @@ Bifrost.prototype = {
         foundElements.push(found[j]);
       }
     }
-    return new Bifrost(foundElements);
+    return new Speedball(foundElements);
   },
   children: function (selector) {
     var children = [];
@@ -426,7 +426,7 @@ Bifrost.prototype = {
         }
       }
     }
-    return new Bifrost($.unique(children));
+    return new Speedball($.unique(children));
   },
   remove: function () {
     for (var i = 0; i < this.length; i++) {
@@ -459,7 +459,7 @@ var $ = function (selector, context) {
       }
     }
   }
-  return new Bifrost(arr);
+  return new Speedball(arr);
 };
 // Shortcuts
 (function () {
@@ -467,7 +467,7 @@ var $ = function (selector, context) {
   var notTrigger = ('resize scroll').split(' ');
 
   function createMethod(name) {
-    Bifrost.prototype[name] = function (handler) {
+    Speedball.prototype[name] = function (handler) {
       var i;
       if (typeof handler === 'undefined') {
         for (i = 0; i < this.length; i++) {
