@@ -1,6 +1,5 @@
 // Speedball is a tiny subset of jQuery
 // ---------------------------------------
-// Credit: basically taken right from http://www.idangero.us/framework7
 
 var Speedball = function (arr) {
   var _this = this,
